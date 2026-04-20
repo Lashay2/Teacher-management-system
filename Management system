@@ -1,0 +1,40 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+class Teacher {
+    int id;
+    String name;
+    String subject;
+    String address;
+    boolean isPresent;
+
+    public Teacher(int id, String name, String subject, String address) {
+        this.id = id;
+        this.name = name;
+        this.subject = subject;
+        this.address = address;
+        this.isPresent = false; // Default
+    }
+
+    public void displayTeacher() {
+        System.out.println("ID: " + id + " | Name: " + name + 
+                           " | Subject: " + subject + " | Address: " + address + 
+                           " | Attendance: " + (isPresent ? "Present" : "Absent"));
+    }
+}
+
+public class TeacherManagementSystem {
+    public static void main(String[] args) {
+        ArrayList<Teacher> teacherList = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
+        
+        // Sample Addition
+        teacherList.add(new Teacher(101, "Dr. Smith", "Mathematics", "123 Oak St"));
+        teacherList.add(new Teacher(102, "Prof. Adams", "Physics", "456 Pine Ave"));
+
+        System.out.println("--- Teacher Management System ---");
+        for (Teacher t : teacherList) {
+            t.displayTeacher();
+        }
+    }
+}
